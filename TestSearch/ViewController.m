@@ -53,10 +53,10 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     if(indexPath.row ==0)
     {
-         cell.textLabel.text = @"继承UIViewContorller, 添加UITableView";
+         cell.textLabel.text = @"系统原生uisearchviewcontorller";
     } else
     {
-        cell.textLabel.text = @"继承UITabelViewController";
+        cell.textLabel.text = @"自定义searchview";
       
     }
     
