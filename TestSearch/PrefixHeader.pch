@@ -1,0 +1,108 @@
+//
+// Prefix header for all source files of the 'SmartHome' target in the 'SmartHome' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+//#import "UINavigationControllerFade.h"
+#import <QuartzCore/QuartzCore.h>
+#import <AudioUnit/AudioUnit.h>
+#import "UIView+UIViewEx.h"
+//#import "BlockUI.h"
+#endif
+//超时时间
+#define  SIP_QUERY_TIME_OUT 2
+#define  RING_BACK_TIME_OUT 30
+
+#define ringfile @"ring.m4r"
+#define kAlertRingFile @"alert.mp3"
+#define ringTimeOut 45
+
+
+//#import "Header.h"
+
+//lh
+//#ifdef __cplusplus
+//#import <opencv2/opencv.hpp>
+//#endif
+
+
+#define FONT(num) [UIFont systemFontOfSize:AUTO(num)]
+//屏幕适配
+#define FB_FIX_SIZE_WIDTH(w) (((w) / 375.0) * SCREEN_WIDTH)
+#define SET_FIX_SIZE_WIDTH (SCREEN_WIDTH /375.0)
+//获取当前app版本
+//#define IOS_VERSION [NSString stringWithFormat:@"v%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey]];
+#define IOS_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]
+//获取适配后的数据大小
+#define AUTO(num)  num * SET_FIX_SIZE_WIDTH
+
+//获取屏幕 宽度、高度
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+
+//判断是否是ios7以上
+#define Is7_0 [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ? YES:NO
+//判断是否是iphone5
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+//使用宏定义16进制颜色值
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define COLOR(a,b,c,d) [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:d]
+
+
+
+//是否为iOS7
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+//是否为iOS8及以上系统
+#define iOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
+
+
+//日至输出
+//#ifdef DEBUG
+//#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+//#else
+//#   define DLog(...)
+//#endif
+
+
+//通用颜色
+#define SHBUTTONCOLOR      UIColorFromRGB(0xE73756)
+#define SHBLACKCOLOR      UIColorFromRGB(0x333333)
+#define SHTINTCOLOR       UIColorFromRGB(0x333333)
+#define NORMALCOLOR      UIColorFromRGB(0xF49F06)
+#define BACKVIEWCOLOR    UIColorFromRGB(0xEBEBEB)
+#define LINECOLOR        UIColorFromRGB(0xE0E0E0)
+#define BLACKCOLOR       UIColorFromRGB(0x161616)
+#define GRAYCOLOR        UIColorFromRGB(0x656565)
+#define WHITECOLOR       UIColorFromRGB(0xFFFFFF)
+#define ASSISTCOLOR      UIColorFromRGB(0x00B42D)
+
+
+#define AJ_LINE_COLOR    UIColorFromRGB(0xb3b3b3);
+#define BLACK_ZYJ        UIColorFromRGB(0x323238)
+#define BLUE_ZYJ         UIColorFromRGB(0x179CF4)
+#define GREEN_ZYJ        UIColorFromRGB(0x2CAC34)
+#define GRAY_ZYJ         UIColorFromRGB(0xC1C1C1)
+#define TBRTINCOLOR_ZYJ  UIColorFromRGB(0xE8E9E8)
+#define TBRPRESS_ZYJ     UIColorFromRGB(0x029BF8)
+#define COLORAPPBLACK UIColorFromRGB(0x333333)//APP黑色
+
+
+#define APPID            @"clientid"//客户端id
+#define LONGITUDE        @"longitute"//经纬度
+#define LATITUDE         @"latitude"
+#define ISLOGIN          @"islogin"
+#define TYPE_VIP         @"typevip"//会员类型
+#define OLDTOKEN         @"oldtoken"//暂时没有用到
+
+
